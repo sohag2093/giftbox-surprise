@@ -4,48 +4,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Touch to see your surprise</title>
+  <title>Gift Surprise</title>
   <style>
     body {
-      background-color: #fff0f5;
-      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe0ec, #ffd6f0);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      padding: 50px;
     }
-    h1 {
-      font-size: 2em;
-      color: #ff1493;
-      animation: shimmer 2s infinite;
-    }
-    @keyframes shimmer {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-    }
-    .gift {
-      margin-top: 30px;
+
+    .gift-box {
+      width: 120px;
+      height: 120px;
+      background: url('https://cdn.pixabay.com/animation/2023/07/31/15/29/15-29-33-74_512.gif') no-repeat center center/cover;
+      border-radius: 20px;
       cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
     }
-    .gift:hover {
-      transform: scale(1.1);
+
+    .gift-box:hover {
+      transform: scale(1.05);
     }
-    iframe {
-      margin-top: 30px;
-      width: 90%;
-      max-width: 640px;
-      height: 360px;
+
+    .video-frame {
+      width: 90vw;
+      max-width: 420px;
+      height: 240px;
       border: none;
+      margin-top: 20px;
+      display: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
-  <h1>✨ Touch to see your surprise ✨</h1>
-  <a href="#video">
-    <img class="gift" src="https://media.giphy.com/media/3o6ZsX2d6DSZzYJZmU/giphy.gif" alt="Gift Box Animation" width="200">
-  </a>
-  <div id="video">
-    <iframe src="https://drive.google.com/file/d/1i9XoUjZ1YMTPGpJ_36E7LWI5e2Acx9cq/preview" allow="autoplay"></iframe>
-  </div>
+  <div class="gift-box" onclick="showVideo()"></div>
+  <iframe class="video-frame" id="video" src="https://drive.google.com/file/d/1i9XoUjZ1YMTPGpJ_36E7LWI5e2Acx9cq/preview" allowfullscreen></iframe>
+
+  <script>
+    function showVideo() {
+      document.getElementById("video").style.display = "block";
+    }
+  </script>
 </body>
 </html>
