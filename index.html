@@ -7,7 +7,7 @@
   <title>Touch to see your surprise</title>
   <style>
     body {
-      background-color: #ffe6f0;
+      background-color: #fff0f5;
       text-align: center;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       padding: 50px;
@@ -30,12 +30,22 @@
     .gift:hover {
       transform: scale(1.1);
     }
+    iframe {
+      margin-top: 30px;
+      width: 90%;
+      max-width: 640px;
+      height: 360px;
+      border: none;
+    }
   </style>
 </head>
 <body>
   <h1>✨ Touch to see your surprise ✨</h1>
-  <a href="https://drive.google.com/file/d/1i9XoUjZ1YMTPGpJ_36E7LWI5e2Acx9cq/preview" target="_blank">
+  <a href="#video">
     <img class="gift" src="https://media.giphy.com/media/3o6ZsX2d6DSZzYJZmU/giphy.gif" alt="Gift Box Animation" width="200">
   </a>
+  <div id="video">
+    <iframe src="https://drive.google.com/file/d/1i9XoUjZ1YMTPGpJ_36E7LWI5e2Acx9cq/preview" allow="autoplay"></iframe>
+  </div>
 </body>
 </html>
