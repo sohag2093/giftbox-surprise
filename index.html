@@ -2,49 +2,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Surprise</title>
-    <style>
-        body {
-            background: linear-gradient(135deg, #ffd3e0, #fff0f5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-        }
-        .gift-container {
-            text-align: center;
-        }
-        .gift-box {
-            width: 150px;
-            height: 150px;
-            background: url('https://i.gifer.com/7efs.gif') no-repeat center center;
-            background-size: cover;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-        .video-frame {
-            display: none;
-            width: 90%;
-            max-width: 560px;
-            height: 315px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gift Surprise</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe0ec, #ffd6f0);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .gift-box {
+      width: 120px;
+      height: 120px;
+      background: url('https://cdn.pixabay.com/animation/2023/07/31/15/29/15-29-33-74_512.gif') no-repeat center center/cover;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.05);
+    }
+
+    .video-frame {
+      width: 90vw;
+      max-width: 420px;
+      height: 240px;
+      border: none;
+      margin-top: 20px;
+      display: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 <body>
-    <div class="gift-container">
-        <div class="gift-box" onclick="showVideo()"></div>
-        <iframe class="video-frame" id="video" src="https://drive.google.com/file/d/1k55HNlddo9nVSqwIsOPZli1YEL0vXzqI/preview" frameborder="0" allowfullscreen></iframe>
-    </div>
+  <div class="gift-box" onclick="showVideo()"></div>
+  <iframe class="video-frame" id="video" src="https://drive.google.com/file/d/1k55HNlddo9nVSqwIsOPZli1YEL0vXzqI/preview" allowfullscreen></iframe>
 
-    <script>
-        function showVideo() {
-            document.getElementById('video').style.display = 'block';
-        }
-    </script>
+  <script>
+    function showVideo() {
+      document.getElementById("video").style.display = "block";
+    }
+  </script>
 </body>
 </html>
