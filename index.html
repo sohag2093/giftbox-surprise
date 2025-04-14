@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Surprise</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffd3e0, #fff0f5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        .gift-container {
+            text-align: center;
+        }
+        .gift-box {
+            width: 150px;
+            height: 150px;
+            background: url('https://i.gifer.com/7efs.gif') no-repeat center center;
+            background-size: cover;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .video-frame {
+            display: none;
+            width: 90%;
+            max-width: 560px;
+            height: 315px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gift-container">
+        <div class="gift-box" onclick="showVideo()"></div>
+        <iframe class="video-frame" id="video" src="https://drive.google.com/file/d/1k55HNlddo9nVSqwIsOPZli1YEL0vXzqI/preview" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function showVideo() {
+            document.getElementById('video').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
