@@ -4,54 +4,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gift Surprise</title>
+  <title>Touch to see your surprise</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #ffe0ec, #ffd6f0);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      background-color: #ffe6f0;
+      text-align: center;
       font-family: 'Comic Sans MS', cursive, sans-serif;
+      padding: 50px;
     }
-
-    .gift-box {
-      width: 120px;
-      height: 120px;
-      background: url('https://cdn.pixabay.com/animation/2023/07/31/15/29/15-29-33-74_512.gif') no-repeat center center/cover;
-      border-radius: 20px;
+    h1 {
+      font-size: 2em;
+      color: #ff1493;
+      animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    .gift {
+      margin-top: 30px;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
     }
-
-    .gift-box:hover {
-      transform: scale(1.05);
-    }
-
-    .video-frame {
-      width: 90vw;
-      max-width: 420px;
-      height: 240px;
-      border: none;
-      margin-top: 20px;
-      display: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    .gift:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
-  <div class="gift-box" onclick="showVideo()"></div>
-  <iframe class="video-frame" id="video" src="https://drive.google.com/file/d/1i9XoUjZ1YMTPGpJ_36E7LWI5e2Acx9cq/view?usp=drive_link" allowfullscreen></iframe>
-
-  <script>
-    function showVideo() {
-      document.getElementById("video").style.display = "block";
-    }
-  </script>
+  <h1>✨ Touch to see your surprise ✨</h1>
+  <a href="https://drive.google.com/file/d/1i9XoUjZ1YMTPGpJ_36E7LWI5e2Acx9cq/preview" target="_blank">
+    <img class="gift" src="https://media.giphy.com/media/3o6ZsX2d6DSZzYJZmU/giphy.gif" alt="Gift Box Animation" width="200">
+  </a>
 </body>
 </html>
