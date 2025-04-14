@@ -2,55 +2,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gift Surprise</title>
+  <meta charset="UTF-8">
+  <title>Giftbox Surprise</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #ffe0ec, #ffd6f0);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #ffe6f0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding-top: 50px;
     }
-
-    .gift-box {
-      width: 120px;
-      height: 120px;
-      background: url('https://cdn.pixabay.com/animation/2023/07/31/15/29/15-29-33-74_512.gif') no-repeat center center/cover;
-      border-radius: 20px;
+    .title {
+      font-size: 2em;
+      color: #ff3399;
+      font-weight: bold;
+      animation: shimmer 2s infinite;
+      margin-bottom: 40px;
+    }
+    @keyframes shimmer {
+      0% {opacity: 0.8;}
+      50% {opacity: 1;}
+      100% {opacity: 0.8;}
+    }
+    .gift {
+      width: 150px;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease-in-out;
     }
-
-    .gift-box:hover {
-      transform: scale(1.05);
+    .gift:hover {
+      transform: scale(1.1);
     }
-
-    .video-frame {
-      width: 90vw;
-      max-width: 420px;
-      height: 240px;
-      border: none;
-      margin-top: 20px;
+    video {
       display: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin-top: 20px;
+      max-width: 90%;
     }
   </style>
 </head>
 <body>
-  <div class="gift-box" onclick="showVideo()"></div>
-  <iframe class="video-frame" id="video" src="https://drive.google.com/file/d/1k55HNlddo9nVSqwIsOPZli1YEL0vXzqI/preview" allowfullscreen></iframe>
-
+  <div class="title">Touch to see your surprise</div>
+  <img src="https://media.giphy.com/media/3oz8xAFtqoOUUrsh7W/giphy.gif" class="gift" onclick="showVideo()">
+  <video id="surpriseVideo" controls>
+    <source src="https://drive.google.com/uc?export=download&id=1k55HNlddo9nVSqwIsOPZli1YEL0vXzqI" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <script>
     function showVideo() {
-      document.getElementById("video").style.display = "block";
+      const video = document.getElementById('surpriseVideo');
+      video.style.display = 'block';
+      video.play();
     }
   </script>
 </body>
